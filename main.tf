@@ -21,6 +21,8 @@ resource "aws_instance" "hextris-server" {
     }
 }
 
+user_data = file("./serve-hextris.sh")
+
 output "hextris-url" {
     value = aws_instance.hextris-server.public_ip
 }
